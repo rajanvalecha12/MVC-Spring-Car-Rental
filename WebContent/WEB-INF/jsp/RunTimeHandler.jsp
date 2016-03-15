@@ -4,24 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome</title>
-
+<title>Insert title here</title>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
 <body>
-<h1>Request Added</h1>
-<a href="showAll">Show All Requests</a>
-<span style="text-align: right;">
-<c:out value="${command.name }"></c:out>
-</span>
 
-<form action="cust/check">
-<label>please enter your name again</label>
-<input type="text" name="name">
-<input type="submit" value="search">
-</form>
-  
-  	${previousBooking }
-  	
+
+<li style="font-size:1.5em , color:blue">cause:</li>${msg }
+<br>
+exception url: ${url }
+<c:forEach items="${exception.stackTrace }" var="item">
+<li style="color:red"><c:out value="${item }"></c:out></li>
+</c:forEach>
 </body>
 </html>
